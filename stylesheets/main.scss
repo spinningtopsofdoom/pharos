@@ -7,30 +7,142 @@ $body-text: #606668;
 $almost-white: #f9f9f9;
 $blue: #487da1;
 $yellow: #d3a637;
+$body-text-light: #8d9ca0;
 
 body {
-  background-color: $gray;
   color: $body-text;
   font-family: "museo-sans", helvetica, arial, sans-serif;
+  background-image: url('bg.png');
+  background-size: 20%;
 }
 
-main {
-  background-color: $white;
-  float: left !important;
-  padding: 2em !important;
-  @include border-radius(9px);
+h1 {
+  font-family: "jaf-domus-titling-web", helvetica, arial, sans-serif;
+  color: $white;
+  padding: 1em 0;
+  float: left;
 }
 
 h2 {
   font-family: "adelle", georgia, times, serif;
   color: $blue;
+  margin: 1em;
 }
 
 h3 {
   font-family: "jaf-domus-titling-web", helvetica, arial, sans-serif;
   color: $red;
+  margin-bottom: 1em;
 }
 
-aside h4 {
-  color: $yellow;
+nav {
+  padding-left: 2em;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  #search input {
+    margin-top: 1em;
+    float: right;
+    width: 190px;
+    padding: 10px 10px 10px 30px;
+    font-family: "museo-sans", helvetica, arial, sans-serif;
+    font-size: 1em;
+    vertical-align: middle;
+    color: $body-text-light;
+    border: 1px solid #dce2e5;
+    background-color: #f5f9fb;
+    background-repeat: no-repeat;
+    background-position: 7px 50%;
+    background-image: url('icon-search.png');
+    @include border-radius(12px);
+  }
+}
+
+.meta-info {
+  margin: 1em;
+  overflow: hidden;
+  li {
+    list-style-type: none;
+    float: left;
+    margin-right: 2em;
+    h4, p {
+      float: left;
+    }
+    h4 {
+      margin-right: 1em;
+    }
+    p {
+      color: $body-text-light;
+    }
+  }
+}
+
+.gray-background {
+  background-color: $gray;
+}
+
+main {
+  padding: 1em 1em 4em 1em;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+article {
+  background-color: $white;
+  clear: both;
+  padding: 2em !important;
+  float: left !important;
+  @include border-radius(9px);
+  margin-left: 1em;
+  p {
+    margin: 1em 0 2em 0;
+  }
+}
+
+aside {
+  float: left !important;
+  margin-left: 2em;
+  h4 {
+    color: $yellow;
+    clear: both;
+    margin: 2em 0 1em 0;
+  }
+  ul.tags {
+    list-style-type: none;
+    margin-bottom: 2em;
+    overflow: hidden;
+    li {
+      float: left;
+      background-color: $white;
+      @include border-radius(14px);
+      padding: 0.3em 1em;
+      margin: 0.5em 0.5em 0 0;
+      a, a:link {
+        color: $body-text-light;
+        text-decoration: none;
+      }
+      a:hover, a:focus {
+        color: $blue;
+      }
+    }
+  }
+  ul.issues {
+    list-style-type: none;
+    margin-bottom: 2em;
+    overflow: hidden;
+    li {
+      a, a:link {
+        color: $blue;
+      }
+      a:hover, a:focus {
+      }
+    }
+  }
+}
+
+footer {
+  color: $body-text;
+  padding: 2em;
+  max-width: 1000px;
+  margin: 0 auto;
 }

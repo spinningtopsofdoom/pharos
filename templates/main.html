@@ -15,103 +15,118 @@
   <body>
     <nav>
       <h1>Pharos</h1>
+      <form id="search">
+        <input class="search-text placeholder" type="text" name="q" placeholder="Search " value="">
+      </form>
     </nav>
 
-    <div class="frame">
-      <main class="bit-75">
+    <div class="gray-background">
+      <main>
         <h2>clojure.core/assoc</h2>
-        <h4>Version</h4>
-        <p>1.6.0</p>
-        <h4>Dialect</h4>
-        <p>JVM</p>
-        <h4>Last Updated</h4>
-        <p>6/20/2014 16:00:00</p>
+        <ul class="meta-info">
+          <li>
+            <h4>Version</h4>
+            <p>1.6.0</p>
+          </li>
+          <li>
+            <h4>Dialect</h4>
+            <p>JVM</p>
+          </li>
+          <li>
+            <h4>Last Updated</h4>
+            <p>6/20/2014 16:00:00</p>
+          </li>
+        </ul>
 
-        <h3>Summary</h3>
-        <p>
-          Associates key(s) to value(s) in a collection
-        </p>
+        <div class="frame">
+          <article class="bit-60">
+            <h3>Summary</h3>
+            <p>
+              Associates key(s) to value(s) in a collection
+            </p>
 
-        <h3>Details</h3>
-        <p>
-          If the same key appears multiple times, the last key value pair is the one that gets associated in the collection. (i.e. (assoc {:a :b} :a :c :a :d) => {:a :d}) If the value is a map then a new map of the same type is returned that contains the mapping for key(s) to value(s). If the value is a vector then only integer keys up to the number of items in a vector are allowed.
-        </p>
+            <h3>Details</h3>
+            <p>
+              If the same key appears multiple times, the last key value pair is the one that gets associated in the collection. (i.e. (assoc {:a :b} :a :c :a :d) => {:a :d}) If the value is a map then a new map of the same type is returned that contains the mapping for key(s) to value(s). If the value is a vector then only integer keys up to the number of items in a vector are allowed.
+            </p>
 
-        <h3>Examples</h3>
-        <p>
-          (assoc {:key1 :val1, :key2 :val2} :key1 :foo :key1 :bar :key3 :bla)
-          (assoc nil :key1 :foo :key1 :bar :key3 :bla)
-          (assoc {} :key1 :foo :key1 :bar :key3 :bla)
-          (assoc [1 2 3] 0 42 2 12)
-          (assoc [1 2 3] 0 42 0 88)
-          (assoc [1 2 3] 3 42)
-        </p>
+            <h3>Examples</h3>
+            <p>
+              (assoc {:key1 :val1, :key2 :val2} :key1 :foo :key1 :bar :key3 :bla)
+              (assoc nil :key1 :foo :key1 :bar :key3 :bla)
+              (assoc {} :key1 :foo :key1 :bar :key3 :bla)
+              (assoc [1 2 3] 0 42 2 12)
+              (assoc [1 2 3] 0 42 0 88)
+              (assoc [1 2 3] 3 42)
+            </p>
 
-        <h3>Failures</h3>
-        <p>
-          Any other keys will throw an exception. (e.g. [42 314 2878] only allows keys 0 1 2 3 and [42] only allows keys 0 and 1.  (assoc [42] 65 22) or (assoc [42] :foo 22) will throw an exception)
-        </p>
+            <h3>Failures</h3>
+            <p>
+              Any other keys will throw an exception. (e.g. [42 314 2878] only allows keys 0 1 2 3 and [42] only allows keys 0 and 1.  (assoc [42] 65 22) or (assoc [42] :foo 22) will throw an exception)
+            </p>
 
-        <h3>Failure Examples</h3>
-        <p>
-          (assoc [1 2 3] 8 42)
-        </p>
+            <h3>Failure Examples</h3>
+            <p>
+              (assoc [1 2 3] 8 42)
+            </p>
+          </article>
+
+          <aside class="bit-35">
+            <h4>Tags</h4>
+            <ul class="tags">
+              <li>
+                <a href="#">:fn</a>
+              </li>
+              <li>
+                <a href="#">:map</a>
+              </li>
+              <li>
+                <a href="#">:vector</a>
+              </li>
+              <li>
+                <a href="#">:associative</a>
+              </li>
+              <li>
+                <a href="#">:collection</a>
+              </li>
+            </ul>
+            <h4>Related</h4>
+            <ul class="tags">
+              <li>
+                <a href="#">:dissoc</a>
+              </li>
+              <li>
+                <a href="#">:get</a>
+              </li>
+              <li>
+                <a href="#">:get-in</a>
+              </li>
+              <li>
+                <a href="#">:update</a>
+              </li>
+              <li>
+                <a href="#">:update-in</a>
+              </li>
+              <li>
+                <a href="#">:assoc-in</a>
+              </li>
+            </ul>
+
+            <h4>Issues</h4>
+            <ul class="issues">
+              <li>
+                <a href="#">#42 - Doesn't go well with cheese</a>
+              </li>
+              <li>
+                <a href="#">#59 - Should be much smaller in scope</a>
+              </li>
+              <li>
+                <a href="#">#82 - If there are six something is seriously wrong</a>
+              </li>
+            </ul>
+          </aside>
+        </div>
       </main>
-
-      <aside class="bit-25">
-        <h4>Tags</h4>
-        <ul>
-          <li>
-            <a href="#">:fn</a>
-          </li>
-          <li>
-            <a href="#">:map</a>
-          </li>
-          <li>
-            <a href="#">:vector</a>
-          </li>
-          <li>
-            <a href="#">:associative</a>
-          </li>
-          <li>
-            <a href="#">:collection</a>
-          </li>
-        </ul>
-        <h4>Related</h4>
-        <ul>
-          <li>
-            <a href="#">:dissoc</a>
-          </li>
-          <li>
-            <a href="#">:get</a>
-          </li>
-          <li>
-            <a href="#">:get-in</a>
-          </li>
-          <li>
-            <a href="#">:update</a>
-          </li>
-          <li>
-            <a href="#">:update-in</a>
-          </li>
-          <li>
-            <a href="#">:assoc-in</a>
-          </li>
-        </ul>
-
-        <h4>Issues</h4>
-        <ul>
-          <li>
-            <a href="#">#42 - Doesn't go well with cheese</a>
-          </li>
-          <li>
-            <a href="#">#59 - Should be much smaller in scope</a>
-          </li>
-          <li>
-            <a href="#">#82 - If there are six something is seriously wrong</a>
-          </li>
-        </ul>
-      </aside>
     </div>
 
   </body>
