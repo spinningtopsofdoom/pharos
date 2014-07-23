@@ -11,12 +11,14 @@
             [ring.middleware.stacktrace :as m-stacktrace]
             [ring.middleware.reload :as m-reload]
             [hiccup.core :refer :all :as h]
+            [hiccup.page :refer :all :as hp]
             [hiccup.middleware :refer (wrap-base-url)]))
 
 (defn home-page []
   (html
    [:html
     [:head
+     (hp/include-css "styles.css")
      [:title "Pharos"]]
     [:body
      [:h1 "Pharos"]
@@ -29,4 +31,7 @@
 
 (def app
   (-> (c-handler/site app-routes)
-      (wrap-base-url)))
+      (m-file/wrap-file "assets")
+      (m-finfo/wrap-file-info)
+      (wrap-base-url)
+      (m-reload/wrap-reload '[pharos.core])))
