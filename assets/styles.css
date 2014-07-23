@@ -115,7 +115,7 @@
   .bit-9,
   .bit-11 {
     width: 100%; } }
-@media (min-width: 50em) and (max-width: 68.75em) {
+@media (min-width: 50em) and (max-width: 50em) {
   .bit-2,
   .bit-7 {
     width: 100%; }
